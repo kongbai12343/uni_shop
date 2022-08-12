@@ -1,0 +1,18 @@
+.icons.data-v-61cdaf32 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.icons .icons-item.data-v-61cdaf32 {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20rpx;
+}
+.icons .icons-item .icons-img.data-v-61cdaf32 {
+  width: 110rpx;
+  height: 110rpx;
+}
+

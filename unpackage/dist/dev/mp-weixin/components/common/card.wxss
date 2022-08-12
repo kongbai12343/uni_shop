@@ -1,0 +1,11 @@
+.card.data-v-349f8cc9 {
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+.card .card-title.data-v-349f8cc9 {
+  font-size: 32rpx;
+  padding: 0 20rpx;
+}
+

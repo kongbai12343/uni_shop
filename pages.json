@@ -1,0 +1,85 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"navigationStyle": "custom", // 自定义头部导航
+				"app-plus": {
+					"scrollIndicator": "none", // 不显示滚动条
+					"titleNView": {
+						"buttons": [{
+								"float": "left",
+								"fontSrc": "./common/iconfont.ttf",
+								"text": "\ue610"
+							},
+							{
+								"float": "right",
+								"fontSrc": "./common/iconfont.ttf",
+								"text": "\ue62f"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/cart/cart",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/profile/profile",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/categary/categary",
+			"style": {
+				"navigationBarTitleText": "分类",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#636263",
+		"selectedColor": "#636263",
+		"spacing": "5px",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "./static/tabbar/index.png",
+				"selectedIconPath": "./static/tabbar/index_active.png"
+			}, {
+				"pagePath": "pages/categary/categary",
+				"text": "分类",
+				"iconPath": "./static/tabbar/categary.png",
+				"selectedIconPath": "./static/tabbar/categary_active.png"
+			},
+			{
+				"pagePath": "pages/cart/cart",
+				"text": "购物车",
+				"iconPath": "./static/tabbar/shop.png",
+				"selectedIconPath": "./static/tabbar/shop_active.png"
+			},
+			{
+				"pagePath": "pages/profile/profile",
+				"text": "我的",
+				"iconPath": "./static/tabbar/profile.png",
+				"selectedIconPath": "./static/tabbar/profile_active.png"
+			}
+		]
+	}
+}
