@@ -44,7 +44,6 @@
 				"navigationBarTitleText": "分类",
 				"enablePullDownRefresh": false
 			}
-
 		},
 		{
 			"path": "pages/search/search",
@@ -69,6 +68,34 @@
 							"color": "#636263",
 							"width": "60px",
 							"text": "搜索",
+							"fontSize": "16px"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/searchList/searchList",
+			"style": {
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom", // 自定义头部导航
+				"app-plus": {
+					"scrollIndicator": "none", // 不显示滚动条
+					"titleNView": {
+						"searchInput": {
+							"align": "left",
+							"placeholder": "空白~~~",
+							"disabled": false,
+							"borderRadius": "15px",
+							"backgroundColor": "#F7F7F7",
+							"placeholderColor": "#B3B3B3"
+						},
+						"buttons": [{
+							"float": "right",
+							"color": "#636263",
+							"width": "60px",
+							"text": "筛选",
 							"fontSize": "16px"
 						}]
 					}

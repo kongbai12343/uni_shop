@@ -1,6 +1,6 @@
 export default {
 	common: {
-		url: 'http://192.168.31.144:3000/api',
+		url: 'http://192.168.166.119:3000/api',
 		data: {},
 		timeout: 5000,
 		method: "GET",
