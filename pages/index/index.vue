@@ -91,22 +91,38 @@
 			this.init();
 		},
 		onReady() {
+			// #ifdef MP-WEIXIN
 			const {
 				top,
 				height
 			} = uni.getMenuButtonBoundingClientRect();
 			this.buttonHeight = height;
+			// #endif
+
 			// 获取手机状态栏高度
 			uni.getSystemInfo({
 				success: data => {
+					// 可滚动区域高度
+					// #ifdef APP-PLUS
+					this.clientHeight = data.windowHeight - uni.upx2px(80);
+					// #endif
+
+					// #ifdef MP-WEIXIN
 					const navBarHeight = height + (top - data.statusBarHeight) * 2
 					// 将其赋值给this
 					// this.height = data.statusBarHeight + navBarHeight;
 					this.height = top;
-					// 可滚动区域高度
 					this.clientHeight = data.windowHeight - uni.upx2px(80) - top - height;
+					// #endif
 				}
 			})
+		},
+		onNavigationBarButtonTap(e) {
+			if (e.float == 'left') {
+				uni.navigateTo({
+					url: '../search/search'
+				})
+			}
 		},
 		methods: {
 			// 初始化数据

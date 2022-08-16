@@ -1,6 +1,6 @@
 export default {
 	common: {
-		url: 'http://192.168.166.119:3000/api',
+		url: 'http://192.168.31.144:3000/api',
 		data: {},
 		timeout: 5000,
 		method: "GET",
@@ -11,6 +11,9 @@ export default {
 		}
 	},
 	request(config) {
+		uni.showLoading({
+			title: '加载中~~~'
+		});
 		config.url = this.common.url + config.url;
 		config.data = config.data || this.common.data;
 		config.timeout = config.timeout || this.common.timeout;
@@ -24,6 +27,9 @@ export default {
 					if (result.statusCode != 200) {
 						reject(new Error('请求失败~~~'))
 					} else {
+						setTimeout(function() {
+							uni.hideLoading();
+						}, 2000);
 						let data = result.data.data;
 						resolve(data);
 					}
