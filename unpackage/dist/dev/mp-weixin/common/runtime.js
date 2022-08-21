@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/common/card":1,"components/index/banner":1,"components/index/icons":1,"components/index/indexSwiper":1,"components/index/recommend":1,"components/index/shop":1,"components/common/splitLines":1,"components/common/commodity":1};
+/******/ 		var cssChunks = {"components/common/card":1,"components/index/banner":1,"components/index/icons":1,"components/index/indexSwiper":1,"components/index/recommend":1,"components/index/shop":1,"components/common/splitLines":1,"components/common/shopList":1,"components/common/commodity":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/common/card":"components/common/card","components/common/commodityList":"components/common/commodityList","components/index/banner":"components/index/banner","components/index/hot":"components/index/hot","components/index/icons":"components/index/icons","components/index/indexSwiper":"components/index/indexSwiper","components/index/recommend":"components/index/recommend","components/index/shop":"components/index/shop","components/common/splitLines":"components/common/splitLines","components/common/commodity":"components/common/commodity"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/common/card":"components/common/card","components/common/commodityList":"components/common/commodityList","components/index/banner":"components/index/banner","components/index/hot":"components/index/hot","components/index/icons":"components/index/icons","components/index/indexSwiper":"components/index/indexSwiper","components/index/recommend":"components/index/recommend","components/index/shop":"components/index/shop","components/common/splitLines":"components/common/splitLines","components/common/shopList":"components/common/shopList","components/common/commodity":"components/common/commodity"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

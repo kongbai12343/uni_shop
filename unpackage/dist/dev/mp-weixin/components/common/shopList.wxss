@@ -1,0 +1,25 @@
+.search-criteria.data-v-aa1e8826 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.search-criteria .search-criteria-item.data-v-aa1e8826 {
+  margin: 10rpx 0;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+}
+.search-criteria .search-criteria-item .active.data-v-aa1e8826 {
+  color: #49BDFB;
+}
+.search-criteria .search-criteria-item .sort.data-v-aa1e8826 {
+  margin-left: 10rpx;
+}
+.search-criteria .search-criteria-item .sort .iconfont.data-v-aa1e8826 {
+  width: 16rpx;
+  height: 8rpx;
+}
+.search-criteria .search-criteria-item .sort .up.data-v-aa1e8826 {
+  margin-bottom: 4rpx;
+}
+

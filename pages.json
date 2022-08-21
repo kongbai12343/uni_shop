@@ -86,7 +86,7 @@
 						"searchInput": {
 							"align": "left",
 							"placeholder": "空白~~~",
-							"disabled": false,
+							"disabled": true,
 							"borderRadius": "15px",
 							"backgroundColor": "#F7F7F7",
 							"placeholderColor": "#B3B3B3"

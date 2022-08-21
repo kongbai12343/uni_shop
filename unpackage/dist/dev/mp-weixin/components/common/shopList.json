@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "split-lines": "/components/common/splitLines",
+    "commodity-list": "/components/common/commodityList"
+  }
+}
