@@ -1,6 +1,5 @@
 <template>
 	<view>
-		{{ this.keyword }}
 		<view class="search-criteria f-color">
 			<view class="search-criteria-item" v-for="(item, index) in tobBar" :key="item.name" @tap="changeTob(index)">
 				<view :class="currentIndex == index ? 'active' : ''">{{ item.name }}</view>
@@ -18,6 +17,8 @@
 <script>
 	import splitLines from '@/components/common/splitLines.vue'
 	import commodityList from './commodityList.vue'
+	
+	import http from '@/http/index.js'
 	export default {
 		name: 'shopList',
 		components: {
@@ -35,10 +36,12 @@
 				currentIndex: 0,
 				tobBar: [{
 						name: '价格',
+						value: 'newPrice',
 						status: 1
 					},
 					{
 						name: '折扣',
+						value: 'discount',
 						status: 0
 					},
 					{
@@ -46,44 +49,44 @@
 						status: 0
 					},
 				],
-				commodityList: [{
-						id: 1,
-						imgUrl: "../../static/img/commodity1.jpg",
-						title: "大姨绒毛大款2020年必须买,不买你就不行了,爆款疯狂GG008大姨绒毛大款2020年必须买,不买你就不行了,爆款疯狂GG008",
-						newPrice: "299",
-						oldPrice: "659",
-						discount: "5.2"
-					},
-					{
-						id: 2,
-						imgUrl: "../../static/img/commodity2.jpg",
-						title: "大姨绒毛大款2020年必须买,不买你就不行了,爆款疯狂GG008大姨绒毛大款2020年必须买,不买你就不行了,爆款疯狂GG008",
-						newPrice: "299",
-						oldPrice: "659",
-						discount: "5.2"
-					},
-					{
-						id: 3,
-						imgUrl: "../../static/img/commodity3.jpg",
-						title: "大姨绒毛大款2020年必须买,不买你就不行了,爆款疯狂GG008大姨绒毛大款2020年必须买,不买你就不行了,爆款疯狂GG008",
-						newPrice: "299",
-						oldPrice: "659",
-						discount: "5.2"
-					},
-					{
-						id: 4,
-						imgUrl: "../../static/img/commodity4.jpg",
-						title: "大姨绒毛大款2020年必须买,不买你就不行了,爆款疯狂GG008大姨绒毛大款2020年必须买,不买你就不行了,爆款疯狂GG008",
-						newPrice: "299",
-						oldPrice: "659",
-						discount: "5.2"
-					}
-				]
+				commodityList: []
 			}
 		},
-
+		watch: {
+			
+		},
+		computed: {
+			orderBy () {
+				let obj = this.tobBar[this.currentIndex]; // 拿到当前对象
+				let val = obj.status == 1 ? 'asc' : 'desc';
+				return {
+					[obj.value]: val
+				}
+			}
+		},
+		mounted() {
+			this.getData();
+		},
 		methods: {
+			getData () {
+				http.request({
+					url: '/goods/search',
+					data: {
+						title: this.keyword,
+						...this.orderBy
+					}
+				}).then(res => {
+					this.commodityList = res;
+				}).catch(err => {
+					uni.showToast({
+						title: '请求失败',
+						icon: 'error'
+					})
+				})
+			},
 			changeTob(index) {
+				// 排序，调用接口
+				this.getData();
 				let idx = this.currentIndex;
 				let item = this.tobBar[idx]; // 拿到切换前选中的项
 				if (this.currentIndex == index) {
@@ -93,6 +96,7 @@
 				item.status = 0; // 将切换前的数据状态滞0
 				this.currentIndex = index;
 				newItem.status = 1; // 将切换后的数据状态滞1
+				
 			}
 		}
 	}

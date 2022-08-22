@@ -29,7 +29,7 @@ export default {
 					} else {
 						setTimeout(function() {
 							uni.hideLoading();
-						}, 2000);
+						}, 500);
 						let data = result.data.data;
 						resolve(data);
 					}

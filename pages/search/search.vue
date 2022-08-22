@@ -9,7 +9,7 @@
 			</view>
 			<view>
 				<template v-if="searchData.length > 0">
-					<view class="search-name" v-for="(item, index) in searchData">{{ item }}</view>
+					<view class="search-name" v-for="(item, index) in searchData" @tap="toSearchList(index)">{{ item }}</view>
 				</template>
 				<view class="search-empty" v-else>暂无搜索记录</view>
 			</view>
@@ -74,6 +74,11 @@
 				}
 				uni.hideKeyboard() // 隐藏软键盘
 				this.addSearchWord();
+			},
+			// 点击某条搜索记录
+			toSearchList (index) {
+				this.keyword = this.searchData[index];
+				this.search();
 			},
 			addSearchWord() {
 				// 判断搜索词是否重复

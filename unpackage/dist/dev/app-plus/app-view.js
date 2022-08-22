@@ -3118,7 +3118,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("uni-view", { attrs: { _i: 0 } })
+  return _c(
+    "uni-view",
+    { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
+    [_c("SplitLines", { attrs: { _i: 1 } })],
+    1
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -3150,16 +3155,17 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
-
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var _splitLines = _interopRequireDefault(__webpack_require__(/*! @/components/common/splitLines.vue */ 100));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
-
+  name: "categary",
   data: function data() {
     return {
       wxsProps: {} };
 
   },
-  components: {} };exports.default = _default;
+  components: {
+    'SplitLines': _splitLines.default } };exports.default = _default;
 
 /***/ }),
 /* 95 */
@@ -3278,7 +3284,12 @@ var render = function() {
                       {
                         key: item,
                         staticClass: _vm._$g("8-" + $30, "sc"),
-                        attrs: { _i: "8-" + $30 }
+                        attrs: { _i: "8-" + $30 },
+                        on: {
+                          click: function($event) {
+                            return _vm.$handleViewEvent($event)
+                          }
+                        }
                       },
                       [_vm._v(_vm._$g("8-" + $30, "t0-0"))]
                     )
@@ -3808,7 +3819,6 @@ var render = function() {
     "uni-view",
     { attrs: { _i: 0 } },
     [
-      _vm._v(_vm._$g(0, "t0-0")),
       _c(
         "uni-view",
         { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },

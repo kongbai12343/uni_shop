@@ -1,5 +1,6 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const connection = require('../db/sql.js');
 
 router.all('*', function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -10,6 +11,22 @@ router.all('*', function(req, res, next) {
 	next();
 });
 
+
+router.get('/api/goods/search', (req, res, next) => {
+	// 获取前端传递数据
+	const [name, orderName] = Object.keys(req.query);
+	let titleValue = req.query[name];
+	let orderValue = req.query[orderName];
+	// 操作数据库
+	const statement = `SELECT * FROM goods_search WHERE title LIKE '%${titleValue}%' ORDER BY ${orderName} ${orderValue};`;
+	connection.query(statement, (error, results, fields) => {
+		if (error) throw error;
+		res.json({
+			"code": 0,
+			"data": results
+		})
+	});
+});
 
 router.get('/api/index_list/1/data/2', (req, res, next) => {
 	res.json({
