@@ -26,6 +26,14 @@
 	color: transparent;
 	display: none;
 }
+/* 状态栏 */
+.status_bar {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
 @font-face {
   font-family: 'iconfont';  /* project id 3453465 */
   src: url('#iefix') format('embedded-opentype'),

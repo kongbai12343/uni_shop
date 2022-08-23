@@ -11,6 +11,508 @@ router.all('*', function(req, res, next) {
 	next();
 });
 
+router.get('/api/goods/list', function(req, res, next) {
+	res.json({
+		code: 0,
+		data: [{
+				id: 1,
+				name: "家居家纺",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 2,
+				name: "女装",
+				data: [{
+						name: "裙装",
+						list: [{
+								id: 1,
+								name: "半身裙",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "连衣裙",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "上衣",
+						list: [{
+								id: 1,
+								name: "T恤",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "衬衫",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 3,
+				name: "男装",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 4,
+				name: "内衣配饰",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 5,
+				name: "云顶户外",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 6,
+				name: "鞋靴",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 7,
+				name: "箱包",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 8,
+				name: "食品酒饮",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 9,
+				name: "美妆个护",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 10,
+				name: "母婴童装",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 11,
+				name: "饰品",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 12,
+				name: "数码家电",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 13,
+				name: "计生用品",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 14,
+				name: "家居家纺",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 15,
+				name: "家居家纺",
+				data: [{
+						name: "家纺",
+						list: [{
+								id: 1,
+								name: "毛巾/浴巾",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "枕头",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					},
+					{
+						name: "生活用品",
+						list: [{
+								id: 1,
+								name: "浴室用品",
+								imgUrl: "../../static/img/list1.jpg"
+							},
+							{
+								id: 2,
+								name: "洗晒",
+								imgUrl: "../../static/img/list1.jpg"
+							}
+						]
+					}
+				]
+			},
+		]
+	})
+});
+
 
 router.get('/api/goods/search', (req, res, next) => {
 	// 获取前端传递数据
@@ -18,7 +520,8 @@ router.get('/api/goods/search', (req, res, next) => {
 	let titleValue = req.query[name];
 	let orderValue = req.query[orderName];
 	// 操作数据库
-	const statement = `SELECT * FROM goods_search WHERE title LIKE '%${titleValue}%' ORDER BY ${orderName} ${orderValue};`;
+	const statement =
+		`SELECT * FROM goods_search WHERE title LIKE '%${titleValue}%' ORDER BY ${orderName} ${orderValue};`;
 	connection.query(statement, (error, results, fields) => {
 		if (error) throw error;
 		res.json({

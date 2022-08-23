@@ -21,3 +21,12 @@
 	color: transparent;
 	display: none;
 }
+
+/* 状态栏 */
+.status_bar {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}

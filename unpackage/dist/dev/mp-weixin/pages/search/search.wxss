@@ -12,4 +12,7 @@
   background-color: #E1E1E1;
   margin: 10rpx;
 }
+.search-item .search-empty.data-v-4cedc0c6 {
+  text-align: center;
+}
 

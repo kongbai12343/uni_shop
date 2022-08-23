@@ -9229,7 +9229,7 @@ function normalizeComponent (
           } else {
             setTimeout(function () {
               uni.hideLoading();
-            }, 2000);
+            }, 500);
             var data = result.data.data;
             resolve(data);
           }
