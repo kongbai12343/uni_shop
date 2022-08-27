@@ -531,6 +531,22 @@ router.get('/api/goods/search', (req, res, next) => {
 	});
 });
 
+
+router.get('/api/goods/id', (req, res, next) => {
+	// 获取前端传递数据
+	let id = req.query.id;
+	// 操作数据库
+	const statement =
+		`SELECT * FROM goods_search WHERE id=${id};`;
+	connection.query(statement, (error, results, fields) => {
+		if (error) throw error;
+		res.json({
+			"code": 0,
+			"data": results
+		})
+	});
+});
+
 router.get('/api/index_list/1/data/2', (req, res, next) => {
 	res.json({
 		"code": 0,

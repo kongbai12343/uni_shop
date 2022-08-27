@@ -27,8 +27,11 @@
 		{
 			"path": "pages/cart/cart",
 			"style": {
-				"navigationBarTitleText": "购物车",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"scrollIndicator": "none", // 不显示滚动条
+					"titleNView": false
+				}
 			}
 
 		}, {
@@ -115,6 +118,26 @@
 					}
 				}
 			}
+		}, {
+			"path": "pages/details/details",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"scrollIndicator": "none", // 不显示滚动条
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [{
+								"type": "menu"
+							},
+							{
+								"type": "share"
+							}
+						]
+					}
+				}
+			}
+
 		}
 	],
 	"globalStyle": {

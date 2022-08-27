@@ -1,0 +1,135 @@
+swiper.data-v-39cbb4e8 {
+  width: 100%;
+  height: 700rpx;
+}
+.swiper-img.data-v-39cbb4e8 {
+  width: 100%;
+  height: 700rpx;
+}
+.detail.data-v-39cbb4e8 {
+  padding-bottom: 88rpx;
+}
+.detail-good.data-v-39cbb4e8 {
+  margin-top: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.detail-good .new-price.data-v-39cbb4e8 {
+  font-size: 34rpx;
+  margin: 20rpx 0;
+}
+.detail-good .new-price-float.data-v-39cbb4e8 {
+  font-size: 20rpx;
+}
+.detail-good .old-price.data-v-39cbb4e8 {
+  margin: 20rpx 0;
+  font-size: 26rpx;
+  text-decoration: line-through;
+}
+.detail-good .title.data-v-39cbb4e8 {
+  margin: 0 40rpx 20rpx;
+}
+.detail-img.data-v-39cbb4e8 {
+  width: 100%;
+}
+.detail-footer.data-v-39cbb4e8 {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  background: #fff;
+  justify-content: space-around;
+  align-items: center;
+}
+.detail-footer .iconfont.data-v-39cbb4e8 {
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+  background: #000;
+  text-align: center;
+  color: #fff;
+}
+.add-shop-car.data-v-39cbb4e8 {
+  background-color: #000;
+  color: #fff;
+  border-radius: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 10rpx 14rpx;
+  font-size: 30rpx;
+}
+.purchase.data-v-39cbb4e8 {
+  background-color: #80daff;
+  color: #fff;
+  border-radius: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 10rpx 14rpx;
+  font-size: 30rpx;
+}
+.purchase-modal.data-v-39cbb4e8 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+.purchase-modal .overlay.data-v-39cbb4e8 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.purchase-modal .content.data-v-39cbb4e8 {
+  position: absolute;
+  left: 0rpx;
+  bottom: 0;
+  width: 100%;
+  height: 600rpx;
+  background-color: #fff;
+}
+.purchase-modal .content .info.data-v-39cbb4e8 {
+  display: flex;
+  justify-content: flex-start;
+}
+.purchase-modal .content .content-img.data-v-39cbb4e8 {
+  vertical-align: bottom;
+  margin: -40rpx 0 0 10rpx;
+  width: 220rpx;
+  height: 240rpx;
+}
+.purchase-modal .content .num.data-v-39cbb4e8 {
+  margin-top: 60rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.purchase-modal .content .num .operation.data-v-39cbb4e8 {
+  display: flex;
+  margin-right: 30rpx;
+  border-radius: 0;
+}
+.purchase-modal .content .num .operation .input.data-v-39cbb4e8 {
+  width: 80rpx;
+  text-align: center;
+  height: 100%;
+  background-color: #e9e9e9;
+}
+.purchase-modal .content .submit.data-v-39cbb4e8 {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #80daff;
+  color: #fff;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+}
+

@@ -1,7 +1,7 @@
 <template>
 	<view class="commodity" :style="{'flex-wrap': wrap}">
 		<view class="commodity-item" v-for="(item, index) in commodityList" :key="index"
-			:style="{'width':width + 'rpx'}">
+			:style="{'width':width + 'rpx'}" @tap="goDetails(item.id)">
 			<image class="commodity-img" :src="item.imgUrl" :style="{'height':height + 'rpx'}"></image>
 			<view class="commodity-content">
 				<text class="commodity-title" :style="{'font-size': fontSize + 'rpx'}">{{ item.title }}</text>
@@ -44,7 +44,11 @@
 			return {}
 		},
 		methods: {
-
+			goDetails(id) {
+				uni.navigateTo({
+					url: '../../pages/details/details?id=' + id + ''
+				})
+			}
 		}
 	}
 </script>

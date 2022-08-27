@@ -5,7 +5,8 @@
     "pages/profile/profile",
     "pages/categary/categary",
     "pages/search/search",
-    "pages/searchList/searchList"
+    "pages/searchList/searchList",
+    "pages/details/details"
   ],
   "subPackages": [],
   "window": {
