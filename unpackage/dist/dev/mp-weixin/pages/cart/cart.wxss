@@ -11,16 +11,23 @@
   background: #f7f7f7;
 }
 .shop-list .shop-list-item .item-img.data-v-0f00adf4 {
-  width: 200rpx;
+  border-radius: 20rpx;
+  width: 220rpx;
   height: 200rpx;
 }
-.shop-list .shop-list-item .item-title.data-v-0f00adf4 {
+.shop-list .shop-list-item .item-content.data-v-0f00adf4 {
+  flex: 1;
+}
+.shop-list .shop-list-item .item-content .item-title.data-v-0f00adf4 {
+  padding-left: 20rpx;
   font-size: 30rpx;
 }
-.shop-list .shop-list-item .color-categary.data-v-0f00adf4 {
+.shop-list .shop-list-item .item-content .color-categary.data-v-0f00adf4 {
+  padding-left: 20rpx;
+  margin: 14rpx 0;
   font-size: 26rpx;
 }
-.shop-list .shop-list-item .price-and-num.data-v-0f00adf4 {
+.shop-list .shop-list-item .item-content .price-and-num.data-v-0f00adf4 {
   display: flex;
   margin: 6rpx 10rpx;
   justify-content: space-between;
@@ -32,6 +39,7 @@
   bottom: 0;
   width: 100%;
   height: 88rpx;
+  z-index: 999;
   background-color: #fff;
 }
 .car-footer .footer-content.data-v-0f00adf4 {
@@ -43,6 +51,25 @@
 .car-footer .footer-content .footer-right.data-v-0f00adf4 {
   display: flex;
 }
+.car-footer .footer-content .footer-right .other-operation.data-v-0f00adf4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.car-footer .footer-content .footer-right .other-operation .collection.data-v-0f00adf4 {
+  padding: 0 20rpx;
+  font-size: 26rpx;
+  color: #ffffff;
+  text-align: center;
+}
+.car-footer .footer-content .footer-right .other-operation .del.data-v-0f00adf4 {
+  font-size: 26rpx;
+  color: #ffffff;
+  padding: 0 20rpx;
+  text-align: center;
+}
 .car-footer .footer-content .footer-right .settlement.data-v-0f00adf4 {
   margin-left: 20rpx;
   width: 200rpx;
@@ -50,5 +77,20 @@
   text-align: center;
   background-color: #80daff;
   color: #fff;
+}
+.car-empty.data-v-0f00adf4 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.car-empty .iconfont.data-v-0f00adf4 {
+  font-size: 160rpx;
 }
 

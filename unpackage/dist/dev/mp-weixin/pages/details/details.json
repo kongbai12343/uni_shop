@@ -2,6 +2,7 @@
   "navigationBarTitleText": "商品详情",
   "enablePullDownRefresh": false,
   "usingComponents": {
+    "uni-number-box": "/uni_modules/uni-number-box/components/uni-number-box/uni-number-box",
     "card": "/components/common/card",
     "commodity-list": "/components/common/commodityList"
   }

@@ -1,0 +1,130 @@
+.config.data-v-11ea80f4 {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 100%;
+}
+.config .user-config.data-v-11ea80f4 {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  border: 2rpx solid #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+.config .user-config .user-config-edit.data-v-11ea80f4 {
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 2rpx solid #f7f7f7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.config .user-config .user-config-edit .edit-info-left.data-v-11ea80f4 {
+  display: flex;
+  align-items: center;
+}
+.config .user-config .user-config-edit .edit-info-left .left-img.data-v-11ea80f4 {
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2rpx solid #CCCCCC;
+  width: 80rpx;
+  height: 80rpx;
+}
+.config .user-config .user-config-edit .edit-info-left .left-name.data-v-11ea80f4 {
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+.config .user-config .user-config-edit .edit-info-right.data-v-11ea80f4 {
+  display: flex;
+  align-items: center;
+}
+.config .user-config .user-config-edit .edit-info-right .right-img.data-v-11ea80f4 {
+  width: 30rpx;
+  height: 30rpx;
+}
+.config .user-config .user-config-edit .edit-info-right .right-name.data-v-11ea80f4 {
+  font-size: 30rpx;
+}
+.config .user-config .user-config-item.data-v-11ea80f4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 2rpx solid #f7f7f7;
+  height: 88rpx;
+  width: 100%;
+}
+.config .user-config .user-config-item .item-title.data-v-11ea80f4 {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.config .user-config .user-config-item .item-img.data-v-11ea80f4 {
+  width: 30rpx;
+  height: 30rpx;
+}
+.config .system-config.data-v-11ea80f4 {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  border: 2rpx solid #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+.config .system-config .system-config-item.data-v-11ea80f4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 2rpx solid #f7f7f7;
+  height: 88rpx;
+  width: 100%;
+}
+.config .system-config .system-config-item .item-title.data-v-11ea80f4 {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.config .system-config .system-config-item .item-img.data-v-11ea80f4 {
+  width: 30rpx;
+  height: 30rpx;
+}
+.config .support.data-v-11ea80f4 {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  background-color: #fff;
+  border: 2rpx solid #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+.config .support .support-item.data-v-11ea80f4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 2rpx solid #f7f7f7;
+  height: 88rpx;
+  width: 100%;
+}
+.config .support .support-item .item-title.data-v-11ea80f4 {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.config .support .support-item .item-img.data-v-11ea80f4 {
+  width: 30rpx;
+  height: 30rpx;
+}
+

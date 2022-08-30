@@ -15,18 +15,21 @@
 			<view class="title">{{ shopData.title }}</view>
 		</view>
 		<!-- 商品详情图片 -->
-		<view>
+		<view style="text-align: center;">
 			<view>
-				<image class="detail-img" src="../../static/img/commodity1.jpg" style="height: 600rpx;"></image>
+				<image class="detail-img" src="../../static/img/detail1.jpg" style="height: 600rpx;"></image>
 			</view>
 			<view>
-				<image class="detail-img" src="../../static/img/commodity2.jpg" style="height: 600rpx;"></image>
+				<image class="detail-img" src="../../static/img/detail2.jpg" style="height: 600rpx;"></image>
 			</view>
 			<view>
-				<image class="detail-img" src="../../static/img/commodity3.jpg" style="height: 600rpx;"></image>
+				<image class="detail-img" src="../../static/img/detail3.jpg" style="height: 600rpx;"></image>
 			</view>
 			<view>
-				<image class="detail-img" src="../../static/img/commodity4.jpg" style="height: 600rpx;"></image>
+				<image class="detail-img" src="../../static/img/detail4.jpg" style="height: 600rpx;"></image>
+			</view>
+			<view>
+				<image class="detail-img" src="../../static/img/detail5.jpg" style="height: 600rpx;"></image>
 			</view>
 		</view>
 		<Card cardTitle="看了又看" />
@@ -34,7 +37,7 @@
 		<!-- 底部 -->
 		<view class="detail-footer">
 			<view class="iconfont icon-xiaoxi"></view>
-			<view class="iconfont icon-gouwuche"></view>
+			<view class="iconfont icon-gouwuche" @tap="goShopCar"></view>
 			<view class="add-shop-car" @tap="showModal">加入购物车</view>
 			<view class="purchase" @tap="showModal">立即购买</view>
 		</view>
@@ -46,7 +49,7 @@
 			<!-- 内容块 -->
 			<view class="content" :animation="animationData">
 				<view class="info">
-					<image class="content-img" src="../../static/img/Children1.jpg"></image>
+					<image class="content-img" :src="shopData.imgUrl"></image>
 					<view>
 						<view class="f-active-color">￥58.00</view>
 						<view>可购33件</view>
@@ -56,12 +59,11 @@
 				<view class="num">
 					<text>购买数量</text>
 					<view class="operation">
-						<button size="mini" :disabled="inputValue > 1 ? false : true" @tap="decrement">-</button>
-						<input type="number" @input="changeNum" class="input" v-model="inputValue" />
-						<button size="mini" @tap="increment">+</button>
+						<uni-number-box :min="1" @change="changeNum($event,index)" v-model="inputValue">
+						</uni-number-box>
 					</view>
 				</view>
-				<view class="submit">确定</view>
+				<view class="submit" @tap="addShopCar">确定</view>
 			</view>
 		</view>
 	</view>
@@ -70,6 +72,10 @@
 <script>
 	import Card from '@/components/common/card.vue';
 	import CommodityList from '@/components/common/commodityList.vue'
+
+	import {
+		mapActions
+	} from 'vuex'
 
 	import http from '@/http/index.js'
 	export default {
@@ -129,7 +135,7 @@
 			}
 		},
 		onNavigationBarButtonTap(e) {
-			if (e.type = 'share') {
+			if (e.type == 'share') {
 				uni.share({
 					"provider": "weixin",
 					"type": 0,
@@ -149,6 +155,7 @@
 			}
 		},
 		methods: {
+			...mapActions('cart', ['addShopCart']),
 			getDataforId(id) {
 				http.request({
 					url: '/goods/id',
@@ -164,14 +171,8 @@
 					})
 				});
 			},
-			changeNum(e) {
-				this.inputValue = e.target.value;
-			},
-			decrement() {
-				this.inputValue -= 1;
-			},
-			increment() {
-				this.inputValue += 1;
+			changeNum(e, index) {
+				this.inputValue = e;
 			},
 			showModal() {
 				const animation = uni.createAnimation({
@@ -198,6 +199,19 @@
 					// this.animationData = animation.export();
 					this.isShowModal = false;
 				}, 200);
+			},
+			goShopCar() {
+				uni.switchTab({
+					url: "../cart/cart"
+				});
+			},
+			addShopCar() {
+				const goods = this.shopData;
+				this.$set(goods, 'num', this.inputValue);
+				this.$set(goods, 'checked', false);
+				console.log(goods);
+				this.addShopCart(goods);
+				this.hideModal();
 			}
 		}
 	}
@@ -329,6 +343,7 @@
 
 			.num {
 				margin-top: 60rpx;
+				padding-left: 10rpx;
 				display: flex;
 				justify-content: space-between;
 

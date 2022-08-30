@@ -103,7 +103,7 @@
 			uni.getSystemInfo({
 				success: data => {
 					// 可滚动区域高度
-					// #ifdef APP-PLUS | H5
+					// #ifdef APP-PLUS || H5
 					this.clientHeight = data.windowHeight - uni.upx2px(80);
 					// #endif
 

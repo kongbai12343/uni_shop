@@ -1430,7 +1430,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"demo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"demo","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -2640,7 +2640,8 @@ function normalizeComponent (
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 4));
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 13));
 
-var _car = _interopRequireDefault(__webpack_require__(/*! ./modules/car.js */ 14));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _cart = _interopRequireDefault(__webpack_require__(/*! ./modules/cart.js */ 14));
+var _profile = _interopRequireDefault(__webpack_require__(/*! ./modules/profile.js */ 15));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 _vue.default.use(_vuex.default);var _default =
 
@@ -2658,7 +2659,8 @@ new _vuex.default.Store({
 
 
   modules: {
-    car: _car.default } });exports.default = _default;
+    cart: _cart.default,
+    profile: _profile.default } });exports.default = _default;
 
 /***/ }),
 
@@ -3920,49 +3922,149 @@ module.exports = index_cjs;
 /***/ }),
 
 /***/ 14:
-/*!****************************************************!*\
-  !*** E:/HBuilder X/Code/demo/store/modules/car.js ***!
-  \****************************************************/
+/*!*****************************************************!*\
+  !*** E:/HBuilder X/Code/demo/store/modules/cart.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var carModule = {
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var carModule = {
   namespaced: true,
   state: {
-    list: [{
-      checked: false,
-      id: 1,
-      imgUrl: '../../static/img/Furnishing2.jpg',
-      title: '爆款睡衣蕾丝睡衣内衣睡裙情趣内衣性感ebay 1553',
-      color: '浅紫色-高弹色丁',
-      price: 26,
-      num: 1 },
-    {
-      checked: false,
-      id: 3,
-      imgUrl: '../../static/img/Furnishing3.jpg',
-      title: '爆款睡衣蕾丝睡衣内衣睡裙情趣内衣性感ebay 1553',
-      color: '浅紫色-高弹色丁',
-      price: 216,
-      num: 3 },
-    {
-      checked: false,
-      id: 2,
-      imgUrl: '../../static/img/Furnishing1.jpg',
-      title: '爆款睡衣蕾丝睡衣内衣睡裙情趣内衣性感ebay 1553',
-      color: '浅紫色-高弹色丁',
-      price: 150,
-      num: 2 }] } };var _default =
+    list: [],
+    selected: [] },
 
+  getters: {
+    isCheckedAll: function isCheckedAll(state) {
+      return state.list.length === state.selected.length;
+    },
+    totalAndCount: function totalAndCount(state) {
+      var totalAndCount = {
+        totalPrice: 0,
+        count: 0 };
+
+      if (state.selected.length > 0) {
+        state.list.map(function (item, index) {
+          if (state.selected.indexOf(item.id) !== -1) {
+            totalAndCount.totalPrice += item.num * item.newPrice;
+          }
+        });
+        totalAndCount.count = state.selected.length;
+      }
+      return totalAndCount;
+    } },
+
+  mutations: {
+    checkedAll: function checkedAll(state) {
+      state.selected = state.list.map(function (item) {
+        item.checked = true;
+        return item.id; // 为后续做单选预留判断条件
+      });
+    },
+    unCheckedAll: function unCheckedAll(state) {
+      state.list.map(function (item) {
+        item.checked = false;
+      });
+      state.selected = [];
+    },
+    checkedOne: function checkedOne(state, index) {
+      // 拿到选中那条数据的id
+      var id = state.list[index].id;
+      var i = state.selected.indexOf(id);
+      if (i !== -1) {// 次条数据为选中，此时的操作应该取消勾选
+        state.list[index].checked = false;
+        state.selected.splice(i, 1);
+      } else {
+        state.list[index].checked = true;
+        state.selected.push(id);
+      }
+    },
+    delGoods: function delGoods(state) {
+      state.list = state.list.filter(function (item) {
+        return state.selected.indexOf(item.id) === -1;
+      });
+    },
+    addShopCart: function addShopCart(state, goods) {
+      state.list.push(goods);
+    } },
+
+  actions: {
+    checkedAll: function checkedAll(_ref)
+
+
+
+    {var state = _ref.state,commit = _ref.commit,getters = _ref.getters;
+      getters.isCheckedAll ? commit("unCheckedAll") : commit("checkedAll");
+    },
+    checkedOne: function checkedOne(_ref2,
+
+    index) {var commit = _ref2.commit;
+      commit("checkedOne", index);
+    },
+    del: function del(_ref3)
+
+    {var commit = _ref3.commit;
+      commit("delGoods");
+      setTimeout(function () {
+        uni.showToast({
+          title: "删除成功",
+          icon: "success" });
+
+      }, 200);
+    },
+    addShopCart: function addShopCart(_ref4,
+
+    goods) {var commit = _ref4.commit;
+      commit("addShopCart", goods);
+      uni.showToast({
+        title: "加入购物车成功",
+        icon: 'success' });
+
+    } } };var _default =
 
 
 
 carModule;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
-/***/ 153:
+/***/ 15:
+/*!********************************************************!*\
+  !*** E:/HBuilder X/Code/demo/store/modules/profile.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var profileModule = {
+  namespaced: true,
+  state: {
+    list: [] },
+
+  getters: {},
+
+
+  mutations: {},
+
+
+  actions: {
+    profile: function profile(_ref)
+
+
+
+    {var state = _ref.state,commit = _ref.commit,getters = _ref.getters;
+      console.log('profile');
+    } } };var _default =
+
+
+
+profileModule;exports.default = _default;
+
+/***/ }),
+
+/***/ 169:
 /*!***********************************************************************************!*\
   !*** E:/HBuilder X/Code/demo/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***********************************************************************************/
@@ -5170,7 +5272,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 21:
+/***/ 22:
 /*!*********************************************!*\
   !*** E:/HBuilder X/Code/demo/http/index.js ***!
   \*********************************************/
@@ -5180,7 +5282,7 @@ module.exports = g;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default = {
   common: {
-    url: 'http://192.168.31.144:3000/api',
+    url: 'http://192.168.3.143:3000/api',
     data: {},
     timeout: 5000,
     method: "GET",
@@ -11213,7 +11315,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"demo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"demo","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -11234,14 +11336,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"demo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"demo","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"demo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"demo","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -11327,7 +11429,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"demo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"demo","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));

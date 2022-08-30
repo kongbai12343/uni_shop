@@ -107,6 +107,7 @@ swiper.data-v-39cbb4e8 {
 }
 .purchase-modal .content .num.data-v-39cbb4e8 {
   margin-top: 60rpx;
+  padding-left: 10rpx;
   display: flex;
   justify-content: space-between;
 }

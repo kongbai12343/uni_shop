@@ -28,6 +28,8 @@
 			"path": "pages/cart/cart",
 			"style": {
 				"enablePullDownRefresh": false,
+				"navigationBarTitleText": "购物车",
+				"navigationStyle": "custom", // 自定义头部导航
 				"app-plus": {
 					"scrollIndicator": "none", // 不显示滚动条
 					"titleNView": false
@@ -38,7 +40,11 @@
 			"path": "pages/profile/profile",
 			"style": {
 				"navigationBarTitleText": "我的",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"scrollIndicator": "none", // 不显示滚动条
+					"titleNView": false
+				}
 			}
 
 		}, {
@@ -135,6 +141,16 @@
 							}
 						]
 					}
+				}
+			}
+
+		}, {
+			"path": "pages/config/config",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+
 				}
 			}
 
