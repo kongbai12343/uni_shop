@@ -7,7 +7,10 @@
     "pages/search/search",
     "pages/searchList/searchList",
     "pages/details/details",
-    "pages/config/config"
+    "pages/config/config",
+    "pages/receivingAddress/receivingAddress",
+    "pages/addPath/addPath",
+    "pages/order/order"
   ],
   "subPackages": [],
   "window": {

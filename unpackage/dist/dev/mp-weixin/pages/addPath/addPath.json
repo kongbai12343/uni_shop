@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "新增收货地址",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "usingComponents": {
+    "mpvue-city-picker": "/components/mpvue-citypicker/mpvueCityPicker"
+  }
+}

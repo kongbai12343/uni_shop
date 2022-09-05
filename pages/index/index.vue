@@ -109,7 +109,6 @@
 
 					// #ifdef MP-WEIXIN
 					const navBarHeight = height + (top - data.statusBarHeight) * 2
-					// 将其赋值给this
 					// this.height = data.statusBarHeight + navBarHeight;
 					this.height = top;
 					this.clientHeight = data.windowHeight - uni.upx2px(80) - top - height;

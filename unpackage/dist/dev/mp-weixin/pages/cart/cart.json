@@ -1,5 +1,6 @@
 {
   "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#FFFFFF",
   "navigationBarTitleText": "购物车",
   "navigationStyle": "custom",
   "usingComponents": {

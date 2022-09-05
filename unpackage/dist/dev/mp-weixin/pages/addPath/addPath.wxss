@@ -1,0 +1,16 @@
+.add-path.data-v-3954a9d4 {
+  padding-left: 20rpx;
+}
+.add-path .path-item.data-v-3954a9d4 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 0;
+  border-bottom: 2rpx solid #CCC;
+}
+.add-path .path-item > input.data-v-3954a9d4 {
+  flex: 1;
+  text-align: left;
+}
+

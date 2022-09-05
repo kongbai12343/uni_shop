@@ -442,73 +442,7 @@ router.get('/api/goods/list', function(req, res, next) {
 						]
 					}
 				]
-			},
-			{
-				id: 14,
-				name: "家居家纺",
-				data: [{
-						name: "家纺",
-						list: [{
-								id: 1,
-								name: "毛巾/浴巾",
-								imgUrl: "../../static/img/list1.jpg"
-							},
-							{
-								id: 2,
-								name: "枕头",
-								imgUrl: "../../static/img/list1.jpg"
-							}
-						]
-					},
-					{
-						name: "生活用品",
-						list: [{
-								id: 1,
-								name: "浴室用品",
-								imgUrl: "../../static/img/list1.jpg"
-							},
-							{
-								id: 2,
-								name: "洗晒",
-								imgUrl: "../../static/img/list1.jpg"
-							}
-						]
-					}
-				]
-			},
-			{
-				id: 15,
-				name: "家居家纺",
-				data: [{
-						name: "家纺",
-						list: [{
-								id: 1,
-								name: "毛巾/浴巾",
-								imgUrl: "../../static/img/list1.jpg"
-							},
-							{
-								id: 2,
-								name: "枕头",
-								imgUrl: "../../static/img/list1.jpg"
-							}
-						]
-					},
-					{
-						name: "生活用品",
-						list: [{
-								id: 1,
-								name: "浴室用品",
-								imgUrl: "../../static/img/list1.jpg"
-							},
-							{
-								id: 2,
-								name: "洗晒",
-								imgUrl: "../../static/img/list1.jpg"
-							}
-						]
-					}
-				]
-			},
+			}
 		]
 	})
 });

@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTitleText": "我的订单",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "split-lines": "/components/common/splitLines"
+  }
+}

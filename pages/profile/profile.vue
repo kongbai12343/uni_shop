@@ -14,7 +14,7 @@
 		</view>
 
 		<view class="order">
-			<view class="order-title">
+			<view class="order-title" @tap="goMyorder">
 				<view>我的订单</view>
 				<view>全部订单 &gt;</view>
 			</view>
@@ -29,29 +29,29 @@
 		<view class="collection">
 			<view class="collection-item">
 				<view class="item-left">
-					<image class="item-img" src="../../static/icon/收藏.png"></image>
+					<image class="item-img" src="../../static/icon/collections.png"></image>
 					<view class="item-title">我的收藏</view>
 				</view>
 				<view class="item-right">
-					<image class="right-img" src="../../static/icon/右箭头.png"></image>
+					<image class="right-img" src="../../static/icon/right-arrow.png"></image>
 				</view>
 			</view>
 			<view class="collection-item">
 				<view class="item-left">
-					<image class="item-img" src="../../static/icon/优惠券.png"></image>
+					<image class="item-img" src="../../static/icon/coupon.png"></image>
 					<view class="item-title">我的优惠券</view>
 				</view>
 				<view class="item-right">
-					<image class="right-img" src="../../static/icon/右箭头.png"></image>
+					<image class="right-img" src="../../static/icon/right-arrow.png"></image>
 				</view>
 			</view>
 			<view class="collection-item">
 				<view class="item-left">
-					<image class="item-img" src="../../static/icon/我的积分.png"></image>
+					<image class="item-img" src="../../static/icon/integral.png"></image>
 					<view class="item-title">我的积分</view>
 				</view>
 				<view class="item-right">
-					<image class="right-img" src="../../static/icon/右箭头.png"></image>
+					<image class="right-img" src="../../static/icon/right-arrow.png"></image>
 				</view>
 			</view>
 		</view>
@@ -61,35 +61,35 @@
 				<view class="vip-title">加入超级会员</view>
 			</view>
 			<view class="vip-right">
-				<image class="right-img" src="../../static/icon/右箭头.png"></image>
+				<image class="right-img" src="../../static/icon/right-arrow.png"></image>
 			</view>
 		</view>
 		<view class="shop-settled">
 			<view class="shop-settled-item">
 				<view class="item-left">
-					<image class="item-img" src="../../static/icon/帮助.png"></image>
+					<image class="item-img" src="../../static/icon/help.png"></image>
 					<view class="item-title">帮助中心</view>
 				</view>
 				<view class="item-right">
-					<image class="right-img" src="../../static/icon/右箭头.png"></image>
+					<image class="right-img" src="../../static/icon/right-arrow.png"></image>
 				</view>
 			</view>
 			<view class="shop-settled-item">
 				<view class="item-left">
-					<image class="item-img" src="../../static/icon/联系客服.png"></image>
+					<image class="item-img" src="../../static/icon/service.png"></image>
 					<view class="item-title">联系客服</view>
 				</view>
 				<view class="item-right">
-					<image class="right-img" src="../../static/icon/右箭头.png"></image>
+					<image class="right-img" src="../../static/icon/right-arrow.png"></image>
 				</view>
 			</view>
 			<view class="shop-settled-item">
 				<view class="item-left">
-					<image class="item-img" src="../../static/icon/商家入驻.png"></image>
+					<image class="item-img" src="../../static/icon/shop.png"></image>
 					<view class="item-title">商家入驻</view>
 				</view>
 				<view class="item-right">
-					<image class="right-img" src="../../static/icon/右箭头.png"></image>
+					<image class="right-img" src="../../static/icon/right-arrow.png"></image>
 				</view>
 			</view>
 		</view>
@@ -102,6 +102,7 @@
 		components: {},
 		data() {
 			return {
+				clientHeight: null,
 				orderList: [{
 						imgUrl: '../../static/img/order1.png',
 						title: '待付款'
@@ -130,6 +131,11 @@
 				uni.navigateTo({
 					url: "../config/config"
 				});
+			},
+			goMyorder() {
+				uni.navigateTo({
+					url: "../order/order"
+				});
 			}
 		}
 	}
@@ -137,8 +143,8 @@
 
 <style scoped lang="less">
 	.profile {
-		height: 100%;
-		background-color: #f0f0f0;
+		// height: 100%;
+		background-color: #f7f7f7;
 
 		.profile-header {
 			background: url('../../static/img/mybg.png') no-repeat;
@@ -210,6 +216,7 @@
 
 	.order {
 		padding: 0 20rpx;
+		box-sizing: border-box;
 		border: 2rpx solid #fff;
 		margin-bottom: 20rpx;
 		background-color: #fff;
@@ -252,6 +259,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
+		box-sizing: border-box;
 		padding: 0 20rpx;
 		margin-bottom: 20rpx;
 		border: 2rpx solid #fff;
@@ -291,8 +299,8 @@
 			padding-right: 20rpx;
 
 			.right-img {
-				width: 60rpx;
-				height: 60rpx;
+				width: 30rpx;
+				height: 30rpx;
 			}
 		}
 	}
@@ -304,6 +312,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 0 20rpx;
+		box-sizing: border-box;
 		margin-bottom: 20rpx;
 		border: 2rpx solid #fff;
 		background-color: #fff;
@@ -332,8 +341,8 @@
 			padding-right: 20rpx;
 
 			.right-img {
-				width: 60rpx;
-				height: 60rpx;
+				width: 30rpx;
+				height: 30rpx;
 			}
 		}
 	}
@@ -345,6 +354,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
+		box-sizing: border-box;
 		padding: 0 20rpx;
 		margin-bottom: 20rpx;
 		border: 2rpx solid #fff;
@@ -384,8 +394,8 @@
 			padding-right: 20rpx;
 
 			.right-img {
-				width: 60rpx;
-				height: 60rpx;
+				width: 30rpx;
+				height: 30rpx;
 			}
 		}
 	}

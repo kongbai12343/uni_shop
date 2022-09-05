@@ -97,6 +97,7 @@
 					url: '/goods/list'
 				}).then(res => {
 					res.map(item => {
+						// 如果存在，不重复添加数据(有BUG，待解决)
 						this.leftList.push({
 							id: item.id,
 							name: item.name
@@ -106,7 +107,6 @@
 							this.rightList = [];
 							this.rightList.push(item.data);
 						}
-
 					})
 				}).catch(err => {
 					uni.showToast({

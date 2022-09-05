@@ -28,6 +28,7 @@
 			"path": "pages/cart/cart",
 			"style": {
 				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
 				"navigationBarTitleText": "购物车",
 				"navigationStyle": "custom", // 自定义头部导航
 				"app-plus": {
@@ -128,6 +129,7 @@
 			"path": "pages/details/details",
 			"style": {
 				"navigationBarTitleText": "商品详情",
+				"navigationBarBackgroundColor": "#FFFFFF",
 				"enablePullDownRefresh": false,
 				"app-plus": {
 					"scrollIndicator": "none", // 不显示滚动条
@@ -148,10 +150,46 @@
 			"path": "pages/config/config",
 			"style": {
 				"navigationBarTitleText": "设置",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/receivingAddress/receivingAddress",
+			"style": {
+				"navigationBarTitleText": "地址管理",
+				"navigationBarBackgroundColor": "#FFFFFF",
 				"enablePullDownRefresh": false,
 				"app-plus": {
-
+					"bounce": "none"
 				}
+			}
+		}, {
+			"path": "pages/addPath/addPath",
+			"style": {
+				"navigationBarTitleText": "新增收货地址",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"app-plus": {
+					"scrollIndicator": "none", // 不显示滚动条
+					"titleNView": {
+						"buttons": [{
+							"float": "right",
+							"color": "#636263",
+							"width": "60px",
+							"text": "保存",
+							"fontSize": "16px"
+						}]
+					}
+				}
+			}
+
+		}, {
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"navigationBarTitleText": "我的订单",
+				"enablePullDownRefresh": false
 			}
 
 		}

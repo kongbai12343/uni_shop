@@ -11,24 +11,24 @@
 				</view>
 				<view class="edit-info-right">
 					<view class="right-name">编辑个人资料</view>
-					<image class="right-img" src="../../static/icon/右箭头.png"></image>
+					<image class="right-img" src="../../static/icon/right-arrow.png"></image>
 				</view>
 			</view>
 			<view class="user-config-item">
 				<view class="item-title">修改密码</view>
-				<image class="item-img" src="../../static/icon/右箭头.png"></image>
+				<image class="item-img" src="../../static/icon/right-arrow.png"></image>
 			</view>
 			<view class="user-config-item">
 				<view class="item-title">绑定手机号码</view>
-				<image class="item-img" src="../../static/icon/右箭头.png"></image>
+				<image class="item-img" src="../../static/icon/right-arrow.png"></image>
 			</view>
-			<view class="user-config-item">
+			<view class="user-config-item" @tap="goAddress">
 				<view class="item-title">地址管理</view>
-				<image class="item-img" src="../../static/icon/右箭头.png"></image>
+				<image class="item-img" src="../../static/icon/right-arrow.png"></image>
 			</view>
 			<view class="user-config-item">
 				<view class="item-title">使用第三方账号</view>
-				<image class="item-img" src="../../static/icon/右箭头.png"></image>
+				<image class="item-img" src="../../static/icon/right-arrow.png"></image>
 			</view>
 		</view>
 		<view class="system-config">
@@ -37,15 +37,15 @@
 				系统设置</view>
 			<view class="system-config-item">
 				<view class="item-title">消息推送</view>
-				<image class="item-img" src="../../static/icon/右箭头.png"></image>
+				<image class="item-img" src="../../static/icon/right-arrow.png"></image>
 			</view>
 			<view class="system-config-item">
 				<view class="item-title">短信提醒</view>
-				<image class="item-img" src="../../static/icon/右箭头.png"></image>
+				<image class="item-img" src="../../static/icon/right-arrow.png"></image>
 			</view>
 			<view class="system-config-item">
 				<view class="item-title">图片显示</view>
-				<image class="item-img" src="../../static/icon/右箭头.png"></image>
+				<image class="item-img" src="../../static/icon/right-arrow.png"></image>
 			</view>
 			<view class="system-config-item">
 				<view class="item-title">清除缓存</view>
@@ -57,15 +57,15 @@
 				支持</view>
 			<view class="support-item">
 				<view class="item-title">给xx好评</view>
-				<image class="item-img" src="../../static/icon/右箭头.png"></image>
+				<image class="item-img" src="../../static/icon/right-arrow.png"></image>
 			</view>
 			<view class="support-item">
 				<view class="item-title">意见反馈</view>
-				<image class="item-img" src="../../static/icon/右箭头.png"></image>
+				<image class="item-img" src="../../static/icon/right-arrow.png"></image>
 			</view>
 			<view class="support-item">
 				<view class="item-title">关于xx商城</view>
-				<image class="item-img" src="../../static/icon/右箭头.png"></image>
+				<image class="item-img" src="../../static/icon/right-arrow.png"></image>
 			</view>
 		</view>
 	</view>
@@ -80,7 +80,11 @@
 			}
 		},
 		methods: {
-
+			goAddress() {
+				uni.navigateTo({
+					url: '../receivingAddress/receivingAddress'
+				})
+			}
 		}
 	}
 </script>
