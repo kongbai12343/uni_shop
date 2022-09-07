@@ -59,7 +59,7 @@
 				<view class="num">
 					<text>购买数量</text>
 					<view class="operation">
-						<uni-number-box :min="1" @change="changeNum($event,index)" v-model="inputValue">
+						<uni-number-box :min="1" @change="changeNum($event)" v-model="inputValue">
 						</uni-number-box>
 					</view>
 				</view>
@@ -171,7 +171,7 @@
 					})
 				});
 			},
-			changeNum(e, index) {
+			changeNum(e) {
 				this.inputValue = e;
 			},
 			showModal() {

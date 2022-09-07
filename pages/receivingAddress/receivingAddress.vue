@@ -1,7 +1,7 @@
 <template>
 	<view class="address-management">
 		<!-- 地址列表 -->
-		<view class="address-list" v-for="(item, index) in list">
+		<view class="address-list" v-for="(item, index) in list" :key="index" @tap="selectAddress(item)">
 			<uni-swipe-action>
 				<uni-swipe-action-item :right-options="options1" @click="bindClick($event, index)">
 					<view class="content-box">
@@ -31,6 +31,7 @@
 	export default {
 		data() {
 			return {
+				from: '',
 				options1: [{
 						text: '编辑',
 						style: {
@@ -48,12 +49,24 @@
 				]
 			}
 		},
+		onLoad(e) {
+			this.from = e.from
+		},
 		computed: {
 			...mapState({
 				list: state => state.address.list
 			})
 		},
 		methods: {
+			selectAddress(item) {
+				if (this.from == 'orderConfirm') {
+					// 页面传递数据
+					uni.$emit('selectAddress', item);
+					uni.navigateBack({
+						delta: 1
+					})
+				}
+			},
 			bindClick(e, index) {
 				if (e.index == 0) {
 					this.editPath(index);

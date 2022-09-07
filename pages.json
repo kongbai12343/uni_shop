@@ -189,6 +189,17 @@
 			"style": {
 				"navigationBarBackgroundColor": "#FFFFFF",
 				"navigationBarTitleText": "我的订单",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"scrollIndicator": "none" // 不显示滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/orderConfirm/orderConfirm",
+			"style": {
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"navigationBarTitleText": "确认订单",
 				"enablePullDownRefresh": false
 			}
 

@@ -2,15 +2,27 @@ const addressModule = {
 	namespaced: true,
 	state: {
 		list: [{
-			name: '空白',
-			tel: 13000000000,
-			city: '重庆市渝北区',
-			detailedAddress: '大竹林街道杨柳北路9号力华科谷',
-			isDefault: false
-		}]
+				name: '空白',
+				tel: 13000000000,
+				city: '重庆市渝北区',
+				detailedAddress: '大竹林街道杨柳北路9号力华科谷',
+				isDefault: false
+			},
+			{
+				name: '张三',
+				tel: 13022113344,
+				city: '重庆市沙坪坝区',
+				detailedAddress: '图书馆',
+				isDefault: true
+			}
+		]
 	},
 	getters: {
-
+		getDefault(state) {
+			return state.list.filter((item, index) => {
+				return item.isDefault;
+			});
+		}
 	},
 	mutations: {
 		createAddress(state, obj) {

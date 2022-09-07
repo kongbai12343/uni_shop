@@ -50,7 +50,7 @@
 								<view>合计:<text class="f-active-color">￥{{ totalAndCount.totalPrice }}</text></view>
 								<view style="font-size: 20rpx;">不含运费</view>
 							</view>
-							<view class="settlement">
+							<view class="settlement" @tap="orderConfirm">
 								结算({{totalAndCount.count}})
 							</view>
 						</template>
@@ -100,6 +100,11 @@
 			},
 			changeNum(e, index) {
 				this.list[index].num = e;
+			},
+			orderConfirm() {
+				uni.navigateTo({
+					url: '../orderConfirm/orderConfirm'
+				})
 			}
 		}
 	}
@@ -155,6 +160,9 @@
 		position: fixed;
 		left: 0;
 		bottom: 0;
+		/* #ifdef H5 */
+		bottom: 100rpx;
+		/* #endif */
 		width: 100%;
 		height: 88rpx;
 		z-index: 999;
